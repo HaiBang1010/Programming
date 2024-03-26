@@ -17,7 +17,7 @@
                 <div class="toggle">
                     <div class="logo">
                         <img src="./images/logo.png" />
-                        <h2>BenFire</h2>
+                        <h2>BenPanther</h2>
                     </div>
                     <div id="btn-close">
                         <span class="material-symbols-outlined"> close </span>
@@ -32,11 +32,11 @@
                         </span>
                         <h3>Dashboard</h3></a
                     >
-                    <a href="#"
+                    <a href="#" class="active"
                         ><span class="material-symbols-outlined"> person </span>
                         <h3>Users</h3></a
                     >
-                    <a href="#" class="active"
+                    <a href="#"
                         ><span class="material-symbols-outlined"> mail </span>
                         <h3>Tickets</h3>
                         <span class="message-count">10</span></a
@@ -48,6 +48,7 @@
                 </div>
             </aside>
 
+            <!-- Main content -->
             <main>
                 <h1>Analytics</h1>
                 <div class="analytics">
@@ -100,12 +101,122 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="users">
 
+                <div class="new-users">
+                    <h2>New Users</h2>
+                    <div class="user-list">
+                        <div class="user">
+                            <img src="./images/profile-3.jpg" alt="#1" />
+                            <h3>BenPanther</h3>
+                            <p>2 minutes ago</p>
+                        </div>
+                        <div class="user">
+                            <img src="./images/profile-3.jpg" alt="#1" />
+                            <h3>BenPanther</h3>
+                            <p>2 minutes ago</p>
+                        </div>
+                        <div class="user">
+                            <img src="./images/profile-1.jpg" alt="#1" />
+                            <h3>BenPanther</h3>
+                            <p>2 minutes ago</p>
+                        </div>
+                        <div class="user">
+                            <img src="./images/plus.png" alt="#1" />
+                            <h3>More</h3>
+                            <p>New User</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-orders">
+                    <h2>Recent Orders</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Payment</th>
+                                <th>Status</th>
+                                <th>Course Number</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <a href="#">Show All</a>
                 </div>
             </main>
+
+            <!-- Right section -->
+            <div class="right-section">
+                <div class="nav">
+                    <div class="menu">
+                        <span class="material-symbols-outlined"> menu </span>
+                    </div>
+                    <div class="dark-mode">
+                        <span class="material-symbols-outlined active">
+                            light_mode
+                        </span>
+                        <span class="material-symbols-outlined">
+                            dark_mode
+                        </span>
+                    </div>
+                    <div class="profile">
+                        <b>HBen</b>
+                        <hr />
+                        <span>admin</span>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./images/profile-1.JPG" alt="" />
+                    </div>
+                </div>
+
+                <div class="reminders">
+                    <div class="header">
+                        <h2>Reminders</h2>
+                        <span class="material-symbols-outlined">
+                            notifications
+                        </span>
+                    </div>
+                    <div class="reminder">
+                        <div class="icon">
+                            <span class="material-symbols-outlined">
+                                volume_up
+                            </span>
+                        </div>
+                        <div class="content">
+                            <div class="info">
+                                <h3>Sleep</h3>
+                                <small>20:00PM</small>
+                            </div>
+                            <span class="material-symbols-outlined">
+                                more_vert
+                            </span>
+                        </div>
+                    </div>
+                    <div class="reminder">
+                        <div class="icon active">
+                            <span class="material-symbols-outlined">
+                                import_contacts
+                            </span>
+                        </div>
+                        <div class="content">
+                            <div class="info">
+                                <h3>Read a book</h3>
+                                <small>6:00AM</small>
+                            </div>
+                            <span class="material-symbols-outlined">
+                                more_vert
+                            </span>
+                        </div>
+                    </div>
+                    <div class="reminder add-reminder">
+                        <span class="material-symbols-outlined"> add </span>
+                        <span>Add Reminder</span>
+                    </div>
+                </div>
+            </div>
         </div>
+        <script src="./orders.js"></script>
         <script src="./index.js"></script>
     </body>
 </html>
