@@ -121,6 +121,8 @@ b {
 
 aside {
     height: 100vh;
+    display: block;
+    /* position: fixed; */
 }
 
 aside .toggle {
@@ -140,9 +142,10 @@ aside .toggle .logo img {
     height: 2.4rem;
 }
 
-aside .toggle #btn-close {
+aside .toggle #close {
     padding-right: 1rem;
     display: none;
+    cursor: pointer;
 }
 
 aside .sidebar {
@@ -490,6 +493,10 @@ main .recent-orders a {
         grid-template-columns: 8rem auto 23rem;
     }
 
+    aside {
+        display: block;
+    }
+
     aside .logo h2 {
         display: none;
     }
@@ -527,7 +534,7 @@ main .recent-orders a {
     aside {
         position: fixed;
         background-color: var(--color-white);
-        width: 15rem;
+        width: 18rem;
         z-index: 3;
         box-shadow: 1rem 3rem 4rem var(--color-light);
         height: 100vh;
@@ -572,7 +579,7 @@ main .recent-orders a {
         bottom: 5rem;
     }
 
-    aside .toggle .close {
+    aside .toggle #close {
         display: inline-block;
         cursor: pointer;
     }
