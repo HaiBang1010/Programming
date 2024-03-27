@@ -129,17 +129,18 @@ aside .toggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 1.4rem;
+    margin-top: 1rem;
 }
 
 aside .toggle .logo {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
 }
 
 aside .toggle .logo img {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 5rem;
+    height: 5rem;
 }
 
 aside .toggle #close {
@@ -222,7 +223,7 @@ aside .sidebar .message-count {
 }
 
 main {
-    margin-top: 1.4rem;
+    margin-top: 2rem;
 }
 
 main .analytics {
@@ -235,7 +236,7 @@ main .analytics > div {
     background-color: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
-    margin-top: 1rem;
+    margin-top: 2.5rem;
     box-shadow: var(--box-shadow);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -380,7 +381,7 @@ main .recent-orders a {
 }
 
 .right-section {
-    margin-top: 1.4rem;
+    margin-top: 2rem;
 }
 
 .right-section .nav {
@@ -430,6 +431,7 @@ main .recent-orders a {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .reminders .header span {
