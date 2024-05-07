@@ -1,22 +1,24 @@
-const gird = document.getElementById("gird");
+const grid = document.getElementById("grid");
+console.log(grid);
 let lockGame = false;
 //set testMode true if you want to see mines
 const testMode = false;
-generateGird();
+generateGrid();
 
-function generateGird() {
+function generateGrid() {
     lockGame = false;
-    gird.innerHTML = "";
+    grid.innerHTML = "";
     for (var i = 0; i < 10; i++) {
-        row = gird.insertRow(i);
+        row = grid.insertRow(i);
         for (var j = 0; j < 10; j++) {
-            cell = gird.insertCell(j);
+            cell = row.insertCell(j);
             cell.onclick = function () {
                 init(this);
             };
+
             var mine = document.createAttribute("mine");
             mine.value = "false";
-            cell.setAttributeMode(mine);
+            cell.setAttributeNode(mine);
         }
     }
     generateMine();
@@ -27,7 +29,7 @@ function generateMine() {
     for (let i = 0; i < 20; i++) {
         var row = Math.floor(Math.random() * 10);
         var col = Math.floor(Math.random() * 10);
-        var cell = gird.rows[row].cells[col];
+        var cell = grid.rows[row].cells[col];
 
         cell.setAttribute("mine", "true");
         if (testMode) {
@@ -40,7 +42,7 @@ function generateMine() {
 function revealMines() {
     for (var i = 0; i < 10; i++) {
         for (var j = 0; j < 10; j++) {
-            var cell = gird.rows[i].cells[j];
+            var cell = grid.rows[i].cells[j];
             if (cell.getAttribute("mine") == "true") {
                 cell.className = "mine";
             }
@@ -53,8 +55,8 @@ function checkGameComplete() {
     for (var i = 0; i < 10; i++) {
         for (var j = 0; j < 10; j++) {
             if (
-                gird.rows[i].cells[j].getAttribute("mine") == "false" &&
-                gird.rows[i].cells[j].innerHTML == ""
+                grid.rows[i].cells[j].getAttribute("mine") == "false" &&
+                grid.rows[i].cells[j].innerHTML == ""
             ) {
                 gameComplete = false;
             }
@@ -73,7 +75,7 @@ function init(cell) {
         return;
     } else {
         //check user clicked on mine
-        if (cell.getAttribute("mine") == true) {
+        if (cell.getAttribute("mine") == "true") {
             revealMines();
             lockGame = true;
         } else {
@@ -82,17 +84,19 @@ function init(cell) {
             var mineCount = 0;
             var cellRow = cell.parentNode.rowIndex;
             var cellCol = cell.cellIndex;
+            console.log(cellRow, cellCol);
             for (
                 var i = Math.max(cellRow - 1, 0);
                 i <= Math.min(cellRow + 1, 9);
                 i++
             ) {
+                console.log("i" + Math.max(cellRow - 1, 0));
                 for (
                     var j = Math.max(cellCol - 1, 0);
                     j <= Math.min(cellCol + 1, 9);
                     j++
                 ) {
-                    if (gird.rows[i].cells[j].getAttribute("mine") == "true") {
+                    if (grid.rows[i].cells[j].getAttribute("mine") == "true") {
                         mineCount++;
                     }
                 }
@@ -109,8 +113,8 @@ function init(cell) {
                         j <= Math.min(cellCol + 1, 9);
                         j++
                     ) {
-                        if (gird.rows[i].cells[j].innerHTML == "") {
-                            init(gird.rows[i].cells[j]);
+                        if (grid.rows[i].cells[j].innerHTML == "") {
+                            init(grid.rows[i].cells[j]);
                         }
                     }
                 }
